@@ -66,7 +66,6 @@ TEST_CASE("RapidJson", "[benchmark]")
             Writer<StringBuffer> writer(strbuf);
             document.Accept(writer);
             strbuf.GetString();
-            strbuf.Clear();
         });
     };
 
@@ -96,13 +95,13 @@ TEST_CASE("QJson", "[benchmark]")
     QString data = json_data::get_data();
     BENCHMARK_ADVANCED("To JSON from String")(Catch::Benchmark::Chronometer meter)
     {
-        meter.measure([&data] { QJsonDocument::fromJson(data.toUtf8()).object(); });
+        meter.measure([&data] {auto res = QJsonDocument::fromJson(data.toUtf8()).object(); });
     };
 
     QJsonObject json = QJsonDocument::fromJson(data.toUtf8()).object();
     BENCHMARK_ADVANCED("From JSON to String")(Catch::Benchmark::Chronometer meter)
     {
-        meter.measure([&json] { QJsonDocument(json).toJson(QJsonDocument::Compact); });
+        meter.measure([&json] { auto res = QJsonDocument(json).toJson(QJsonDocument::Compact); });
     };
 
     BENCHMARK_ADVANCED("FROM .json File to JSON object")(Catch::Benchmark::Chronometer meter)
