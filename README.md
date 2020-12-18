@@ -1,11 +1,11 @@
 #Deserialization from string
-![Screenshot](deserialisation_str.jpg)
+![Screenshot](Deserialisation_str.jpg)
 
 # Serialization to string
-![Screenshot](serialization_str.jpg)
+![Screenshot](Serialisation_str.jpg)
 
 # Deserialization from file
-![Screenshot](serialisation_file.jpg)
+![Screenshot](Deserialisation_file.jpg)
 
 # Serialization from string
-![Screenshot](serialisation_file.jpg)
+![Screenshot](Serialisation_file.jpg)
