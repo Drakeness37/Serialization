@@ -7,5 +7,5 @@
 # Deserialization from file
 ![Screenshot](Deserialisation_file.jpg)
 
-# Serialization from string
+# Serialization to string
 ![Screenshot](Serialisation_file.jpg)
